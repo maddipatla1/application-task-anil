@@ -17,17 +17,18 @@ Before you begin, ensure you have the following installed:
 Clone this repository to your local machine:
 
 ```bash
-git clone https://github.com/yourusername/number-guessing-game.git
-cd number-guessing-game
+git clone git@github.com:maddipatla1/application-task-anil.git
 ```
+
+cd application-task-anil
 ````
 
 ## Build Docker Images
 
-1. Navigate to the `Player` and `GameMaster` directories.
+1. Navigate to the `player` and `master` directories.
 
    ```bash
-   cd Player
+   cd player
    ```
 
 2. Build the Docker image for the Player server:
@@ -36,10 +37,10 @@ cd number-guessing-game
    docker build -t player-server .
    ```
 
-3. Navigate to the `GameMaster` directory.
+3. Navigate to the `master` directory.
 
    ```bash
-   cd ../GameMaster
+   cd ../master
    ```
 
 4. Build the Docker image for the Game Master server:
