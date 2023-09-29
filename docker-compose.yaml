@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+  player-server:
+    build:
+      context: ./player
+    ports:
+      - "5000:5000"
+    environment:
+      - NAME=Player
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://player-server:5000/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+  master-server:
+    build:
+      context: ./master
+    ports:
+      - "5001:5001"
+    environment:
+      - NAME=GameMaster
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://game-master-server:5001/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
